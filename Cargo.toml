@@ -1,0 +1,6 @@
+[workspace]
+members = [
+  "packages/back/server",
+  "packages/back/api",
+  "packages/back/utils"
+]
