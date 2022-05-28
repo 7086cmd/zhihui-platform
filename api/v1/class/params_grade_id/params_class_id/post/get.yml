@@ -1,0 +1,23 @@
+name: Get Post
+description: Get posts of a class
+method: GET
+url: /api/v1/class/post/{grade_id}/{class_id}
+authorizion: true
+params:
+  - name: grade_id
+    in: path
+    required: true
+    type: integer
+    description: The grade id
+  - name: class_id
+    in: path
+    required: true
+    type: integer
+    description: The class id
+response:
+  - name: status
+    type: integer
+    description: HTTP status code
+  - name: details
+    type: Array<post>
+    description: request body

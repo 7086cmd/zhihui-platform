@@ -1,0 +1,25 @@
+name: Register Member
+description: Register a member to a class
+method: POST
+url: /api/v1/class/member/{grade_id}/{class_id}
+authorizion: true
+params:
+  - name: grade_id
+    in: path
+    required: true
+    type: integer
+    description: The grade id
+  - name: class_id
+    in: path
+    required: true
+    type: integer
+    description: The class id
+  - name: member
+    in: body
+    required: true
+    type: member
+    description: The member to be registered
+response:
+  - name: status
+    type: integer
+    description: HTTP status code
