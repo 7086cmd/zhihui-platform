@@ -1,0 +1,11 @@
+{
+  "name": "@magnifique/tools-builder-client-backend",
+  "version": "0.1.0",
+  "devDependencies": {
+    "esbuild": "^0.14.41"
+  },
+  "type": "module",
+  "dependencies": {
+    "chalk": "^5.0.1"
+  }
+}

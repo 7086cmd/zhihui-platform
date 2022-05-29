@@ -1,15 +1,17 @@
 [package]
+edition = "2021"
 name = "utils"
 version = "0.1.0"
-edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-strum = { version = "0.24", features = ["derive"] }
-mongodb = "2.2.1"
-json5 = "0.4.1"
-serde_json = "1.0.81"
 base64 = "0.13.0"
+json5 = "0.4.1"
+mongodb = {version = "2.2.1", features = ["sync"], default-features = false}
+serde = {version = "1.0.103", features = ["derive"], default-features = false}
+serde_json = "1.0.81"
+strum = {version = "0.24", features = ["derive"]}
 time = "0.3.9"
+types = {path = "../../typings/backend"}
 uuid = "1.1.0"

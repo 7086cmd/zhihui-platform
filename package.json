@@ -4,9 +4,9 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build::page": "echo \"none\"",
-    "build::client": "echo \"none\"",
-    "build::app": "echo \"none\"",
+    "build::page": "node packages/tools/builder/client/frontend/src/main.js",
+    "build::client": "node packages/tools/builder/client/backend/src/main.js",
+    "build::app": "node packages/tools/builder/client/app/src/main.js",
     "handle": "echo \"none\""
   },
   "keywords": [],

@@ -1,0 +1,8 @@
+{
+  "name": "@magnifique/tools-builder-client-app",
+  "version": "0.1.0",
+  "type": "module",
+  "devDependencies": {
+    "electron-builder": "^23.0.3"
+  }
+}

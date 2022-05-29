@@ -1,0 +1,8 @@
+{
+  "name": "@magnifique/tools-builder-client-frontend",
+  "version": "0.1.0",
+  "type": "module",
+  "devDependencies": {
+    "vite": "^2.9.9"
+  }
+}
