@@ -7,5 +7,5 @@ version = "0.1.0"
 
 [dependencies]
 actix-web = "4"
+backend_utils = {path = "../utils"}
 types = {path = "../../typings/backend"}
-utils = {path = "../utils"}

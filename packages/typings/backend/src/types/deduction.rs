@@ -1,4 +1,6 @@
 pub mod deduction {
+  use serde::{Deserialize, Serialize};
+  #[derive(Debug, Clone, Serialize, Deserialize)]
   pub struct Deduction {
     pub person: u32,
     pub deduction: f32,
