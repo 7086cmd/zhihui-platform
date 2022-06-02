@@ -26,19 +26,7 @@ pub mod deduction {
     let client = mongodb::sync::Client::with_uri_str("mongodb://localhost:27017")
       .map_err(|error| error.to_string())?;
     let collection = client.database("magnifique").collection("deduction");
-    let result = collection.insert_one(
-      mongodb::bson::doc! {
-          "person": &deduction.person,
-          "deduction": &deduction.deduction,
-          "date": &deduction.date,
-          "id": &deduction.id,
-          "description": &deduction.description,
-          "reason": &deduction.reason,
-          "place": &deduction.place,
-          "deductor": &deduction.deductor,
-      },
-      None,
-    );
+    let result = collection.insert_one(deduction, None);
     match result {
       Ok(result) => Ok(result.inserted_id.to_string()),
       Err(error) => Err(error.to_string()),

@@ -66,28 +66,9 @@ async function buildPreload() {
  * @description Builds the client and preload
  */
 function main() {
-  console.time("build");
-  buildClient()
-    .then(() => {
-      console.info(
-        chalk.blue("Main"),
-        "Module",
-        chalk.green("done"),
-        "in",
-        chalk.red(resolve("dist/client/magnifique.min.js"))
-      );
-      return buildPreload();
-    })
-    .then(() => {
-      console.info(
-        chalk.blue("Preload"),
-        "Module",
-        chalk.green("done"),
-        "in",
-        chalk.red(resolve("dist/client/preload.min.js"))
-      );
-      console.timeEnd("build");
-    });
+  buildClient().then(() => {
+    return buildPreload();
+  });
 }
 
 main();

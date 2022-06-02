@@ -6,6 +6,7 @@ async function buildPages() {
     publicDir: resolve("public/"),
     outDir: resolve("dist/client/pages"),
     root: resolve("packages/front/pages"),
+    logLevel: "silent",
   });
   return result;
 }

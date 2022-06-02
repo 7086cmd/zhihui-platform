@@ -7,7 +7,7 @@
     "build::page": "node packages/tools/builder/client/frontend/src/main.js",
     "build::client": "node packages/tools/builder/client/backend/src/main.js",
     "build::app": "node packages/tools/builder/client/app/src/main.js",
-    "handle": "echo \"none\"",
+    "handle": "node packages/tools/builder/handler/src/main.js",
     "dev::page": "vite ./packages/front/pages"
   },
   "keywords": [],
