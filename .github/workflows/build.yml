@@ -40,7 +40,7 @@ jobs:
           override: true
       - name: Build Back End
         run: "cargo build --release -q"
-      - uses: actions/setup-python@v1
+      - uses: actions/setup-python@v3
         with:
           python-version: 3.10.4
       - name: Install PyInstaller
