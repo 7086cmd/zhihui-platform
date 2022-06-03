@@ -60,7 +60,7 @@ pub mod member {
     let collection = client.database("magnifique").collection::<Member>("member");
     let number = member.number;
     let result = collection.insert_one(member, None);
-    edit_password(number, number.to_string()).unwrap();
+    edit_password(number, "12345678".to_string()).unwrap();
     match result {
       Ok(_result) => Ok("Member created".to_string()),
       Err(error) => Err(error.to_string()),
