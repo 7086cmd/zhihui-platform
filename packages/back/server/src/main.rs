@@ -1,6 +1,4 @@
 use actix_web::{get, App, HttpResponse, HttpServer, Responder};
-use backend_utils::utils::database::{deduction, member};
-
 #[get("/")]
 async fn index() -> impl Responder {
   HttpResponse::Ok().body("Hello world!")

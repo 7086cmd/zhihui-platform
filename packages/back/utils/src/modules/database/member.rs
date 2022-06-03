@@ -54,7 +54,6 @@ pub mod member {
       }
       Err(error) => Err(error.to_string()),
     }
-    // Ok(())
   }
   pub fn create(member: Member) -> Result<std::string::String, std::string::String> {
     let client = mongodb::sync::Client::with_uri_str("mongodb://localhost:27017/").unwrap();
@@ -66,7 +65,6 @@ pub mod member {
       Ok(_result) => Ok("Member created".to_string()),
       Err(error) => Err(error.to_string()),
     }
-    // Ok(())
   }
   pub fn edit_password(
     number: u32,
@@ -80,7 +78,6 @@ pub mod member {
     use mongodb::bson::doc;
     let based_str: String = encode(password.as_bytes());
     let mut hash_str: Sha512 = Sha512::new();
-    // hash_str.input_str(based_str);
     hash_str.input(based_str.as_bytes());
     let password_result = hash_str.result_str();
     let result = collection.update_one(
@@ -98,6 +95,5 @@ pub mod member {
       }
       Err(error) => Err(error.to_string()),
     }
-    // Ok(())
   }
 }
