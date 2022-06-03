@@ -16,4 +16,4 @@ serde = {version = "1.0.103", features = ["derive"], default-features = false}
 serde_json = "1.0.81"
 strum = {version = "0.24", features = ["derive"]}
 time = "0.3.9"
-uuid = {version = "1.1.0", features = ["v4", "fast-rng", "macro-diagnostics"]}
+uuid = {version = "1.1.1", features = ["v4", "fast-rng", "macro-diagnostics"]}
