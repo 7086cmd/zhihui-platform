@@ -1,10 +1,22 @@
 pub mod deduction {
+  use serde::{Deserialize, Serialize};
+  #[derive(Debug, Clone, Serialize, Deserialize)]
+  pub struct Deduction {
+    pub person: u32,
+    pub deduction: f32,
+    pub reason: String,
+    pub date: String,
+    pub place: String,
+    pub deductor: u32,
+    pub description: String,
+    pub id: String,
+  }
   pub fn delete(id: String) -> Result<String, String> {
     let client = mongodb::sync::Client::with_uri_str("mongodb://localhost:27017")
       .map_err(|error| error.to_string())?;
     let collection = client
       .database("magnifique")
-      .collection::<types::typical::deduction::Deduction>("deduction");
+      .collection::<Deduction>("deduction");
     let result = collection.delete_one(
       mongodb::bson::doc! {
         "id": id
@@ -22,7 +34,7 @@ pub mod deduction {
       Err(error) => Err(error.to_string()),
     }
   }
-  pub fn create(deduction: types::typical::deduction::Deduction) -> Result<String, String> {
+  pub fn create(deduction: Deduction) -> Result<String, String> {
     let client = mongodb::sync::Client::with_uri_str("mongodb://localhost:27017")
       .map_err(|error| error.to_string())?;
     let collection = client.database("magnifique").collection("deduction");
@@ -32,14 +44,14 @@ pub mod deduction {
       Err(error) => Err(error.to_string()),
     }
   }
-  pub fn list() -> Option<Vec<types::typical::deduction::Deduction>> {
+  pub fn list() -> Option<Vec<Deduction>> {
     let client = mongodb::sync::Client::with_uri_str("mongodb://localhost:27017")
       .map_err(|error| error.to_string())
       .ok()?;
     let collection = client
       .database("magnifique")
-      .collection::<types::typical::deduction::Deduction>("deduction");
-    let mut result: Vec<types::typical::deduction::Deduction> = Vec::new();
+      .collection::<Deduction>("deduction");
+    let mut result: Vec<Deduction> = Vec::new();
     for item in collection.find(None, None).ok()? {
       result.push(item.unwrap());
     }
