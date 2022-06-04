@@ -12,6 +12,19 @@ pub mod admin {
       .database("magnifique")
       .collection::<AdminAccount>("adminaccount");
     let user = &adminaccount.username.clone();
+    use mongodb::bson::doc;
+    let result = collection.find_one(
+      Some(doc! {
+        "username": user,
+      }),
+      None,
+    );
+    match result {
+      Ok(_data) => {
+        return Err("Admin account already exists".to_string());
+      }
+      _ => {}
+    }
     let result = collection.insert_one(adminaccount, None);
     edit_password(user.to_string(), "12345678".to_string()).unwrap();
     match result {

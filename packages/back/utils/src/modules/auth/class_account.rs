@@ -13,6 +13,20 @@ pub mod class_account {
     let collection = client
       .database("magnifique")
       .collection::<ClassAccount>("classaccount");
+    use mongodb::bson::doc;
+    let one = collection.find_one(
+      Some(doc! {
+        "gradeid": &classaccount.gradeid,
+        "classid": &classaccount.classid,
+      }),
+      None,
+    );
+    match one {
+      Ok(_data) => {
+        return Err("Class account already exists".to_string());
+      }
+      _ => {}
+    }
     let result = collection.insert_one(classaccount, None);
     match result {
       Ok(result) => Ok(result.inserted_id.to_string()),

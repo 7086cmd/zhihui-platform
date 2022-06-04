@@ -8,7 +8,7 @@
     "build::client": "node packages/tools/builder/client/backend/src/main.js",
     "build::app": "node packages/tools/builder/client/app/src/main.js",
     "handle": "node packages/tools/builder/handler/src/main.js",
-    "dev::page": "vite ./packages/front/pages"
+    "dev::page": "cd packages/front/pages && vite"
   },
   "keywords": [],
   "author": "7086cmd <7086cmd@gmail.com>",
