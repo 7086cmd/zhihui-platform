@@ -1,9 +1,10 @@
 name: Build App
 
 on:
-- workflow_dispatch
+  workflow_dispatch:
+    branches: [main]
 
-env:
+inputs:
   version: string
 
 jobs:
