@@ -4,9 +4,6 @@ on:
   workflow_dispatch:
     branches: [main]
 
-inputs:
-  version: string
-
 jobs:
   build_frontend:
     runs-on: [windows-latest, macos-latest]
