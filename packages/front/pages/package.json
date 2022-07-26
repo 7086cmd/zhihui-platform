@@ -52,7 +52,7 @@
     "typescript": "~4.7.2",
     "unplugin-auto-import": "^0.8.7",
     "unplugin-icons": "^0.14.3",
-    "unplugin-vue-components": "^0.19.6",
+    "unplugin-vue-components": "0.21.2",
     "vant": "4.0.0-alpha.4",
     "vite": "^2.9.9",
     "vite-plugin-monaco-editor": "^1.0.10",
